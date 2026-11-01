@@ -1,0 +1,2 @@
+order_id,customer_id,order_timestamp,order_status,payment_method
+O0000001,C000001,2025-02-01 10:30:00,Completed,UPI
