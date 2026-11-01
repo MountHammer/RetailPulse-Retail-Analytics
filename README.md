@@ -182,3 +182,45 @@ The current test suite contains eight passing tests covering:
 The synthetic data generation, data-quality validation, dimensional warehouse loading, foreign-key validation, and six analytics report exports have been executed successfully.
 
 The project uses synthetic retail data and is intended to demonstrate practical data engineering and analytics workflows.
+
+## Data Dictionary and Design Decisions
+
+See [docs/data_dictionary.md](docs/data_dictionary.md) for source and warehouse columns, data types, keys, nullability, measures, and fact grain. See [docs/design_notes.md](docs/design_notes.md) for architecture trade-offs, full-refresh idempotency, retry/backfill behavior, limitations, and optimization opportunities.
+
+## One-command Pipeline Run and Observability
+
+Run the complete pipeline from the repository root:
+
+```powershell
+python scripts/run_pipeline.py
+```
+
+Optional generator parameters:
+
+```powershell
+python scripts/run_pipeline.py --order-items 200000 --seed 42 --anomaly-rate 0.02
+```
+
+The runner executes generation, quality validation, warehouse initialization, warehouse loading, and analytics in order. It writes one JSON object per run to `reports/pipeline_runs.jsonl`, including a UUID `run_id`, UTC start/end timestamps, step and total durations, source/valid/rejected counts, warehouse row counts, source-to-fact reconciliation, status, and failure reason when applicable. A failed step stops the run and returns a non-zero exit code.
+
+## Reconciliation
+
+The runner compares validated order-item row count, net revenue, and total quantity against the loaded `fact_sales` table. All three comparisons must match for a successful run. Foreign-key orphan checks are also performed during warehouse loading.
+
+## Expanded Tests
+
+Run:
+
+```powershell
+python -m pytest -v
+```
+
+The tests cover valid and invalid records, empty batches, missing schema columns, null business identifiers, malformed numeric values, duplicate transaction IDs, invalid references, discount boundaries, and amount reconciliation.
+
+## Sample Data
+
+A compact, hand-inspectable synthetic input example is available in `data/sample/`. The default generator remains the reproducible way to create the larger 100,000-row workload.
+
+## Run History and Generated Outputs
+
+Generated raw/processed/quarantine CSVs, DuckDB files, analytics exports, and run history are local outputs and are excluded from Git where appropriate. The generator summary and source code are versioned so reviewers can reproduce the workload.
