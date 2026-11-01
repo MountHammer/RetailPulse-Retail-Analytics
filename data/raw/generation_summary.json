@@ -1,0 +1,19 @@
+{
+    "project": "RetailPulse",
+    "seed": 42,
+    "generated_at_utc": "2026-11-01T16:11:53.805666+00:00",
+    "requested_order_items": 100000,
+    "anomaly_rate": 0.02,
+    "injected_anomalies": {
+        "missing_product_id": 500,
+        "unknown_product_id": 500,
+        "negative_quantity": 500,
+        "duplicate_order_item_id": 500
+    },
+    "row_counts": {
+        "customers": 5000,
+        "products": 500,
+        "orders": 40000,
+        "order_items": 100000
+    }
+}

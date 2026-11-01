@@ -1,0 +1,31 @@
+{
+    "project": "RetailPulse",
+    "total_source_records": {
+        "customers": 5000,
+        "products": 500,
+        "orders": 40000,
+        "order_items": 100000
+    },
+    "valid_records": {
+        "customers": 5000,
+        "products": 500,
+        "orders": 40000,
+        "order_items": 98002
+    },
+    "rejected_records": {
+        "customers": 0,
+        "products": 0,
+        "orders": 0,
+        "order_items": 1998
+    },
+    "order_item_data_trust_score": 98.0,
+    "rejection_reasons": {
+        "MISSING_PRODUCT_ID": 500,
+        "INVALID_QUANTITY": 500,
+        "GROSS_AMOUNT_MISMATCH": 500,
+        "NET_AMOUNT_MISMATCH": 500,
+        "INVALID_PRODUCT_REFERENCE": 500,
+        "DUPLICATE_ORDER_ITEM_ID": 500
+    },
+    "status": "REVIEW_REQUIRED"
+}

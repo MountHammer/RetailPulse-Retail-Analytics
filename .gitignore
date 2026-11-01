@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.vscode/
+.idea/
+.env
+*.log
+
+database/*.duckdb
+database/*.wal
+
+data/raw/*.csv
+data/processed/*.csv
+data/quarantine/*.csv
+

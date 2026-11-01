@@ -1,0 +1,4 @@
+customer_segment,customers,orders,revenue,average_order_value
+Regular,3299,24129,2026620737.16,83991.08
+Premium,1234,9021,761633927.26,84428.99
+Corporate,464,3411,284313864.25,83352.06
