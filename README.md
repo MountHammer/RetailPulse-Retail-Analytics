@@ -99,7 +99,7 @@ All six reports are exported as CSV files into `reports/analytics/`.
 ## Project Structure
 
 ```text
-yottaflex-data-engineering/
+RetailPulse-Retail-Analytics/
 ├── data/
 │   ├── raw/
 │   ├── processed/
