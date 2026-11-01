@@ -1,7 +1,7 @@
 {
     "project": "RetailPulse",
     "seed": 42,
-    "generated_at_utc": "2026-11-01T16:11:53.805666+00:00",
+    "generated_at_utc": "2026-11-01T17:21:13.451610+00:00",
     "requested_order_items": 100000,
     "anomaly_rate": 0.02,
     "injected_anomalies": {
