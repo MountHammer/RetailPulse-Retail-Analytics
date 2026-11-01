@@ -1,0 +1,2 @@
+customer_id,customer_name,email,city,customer_segment,signup_date
+C000001,Sample Customer,sample.customer@example.com,Kolkata,Regular,2025-01-15
