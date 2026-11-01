@@ -1,0 +1,2 @@
+product_id,product_name,category,brand,list_price,is_active
+P00001,Sample Wireless Mouse,Electronics,SampleTech,1000.00,True
