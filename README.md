@@ -166,7 +166,7 @@ python -m pytest -v
 
 ## Testing
 
-The current test suite contains eight passing tests covering:
+The automated test suite covers the following validation and edge cases:
 
 - Valid product acceptance
 - Invalid product price rejection
@@ -176,6 +176,11 @@ The current test suite contains eight passing tests covering:
 - Invalid product reference rejection
 - Duplicate order-item ID rejection
 - Gross amount mismatch rejection
+- Empty order-item batches
+- Missing required source columns
+- Null required product identifiers
+- Malformed numeric quantities
+- Discounts outside the allowed business range
 
 ## Project Status
 
