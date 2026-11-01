@@ -1,0 +1,2 @@
+order_item_id,order_id,product_id,quantity,unit_price,discount_pct,gross_amount,net_amount
+I000000001,O0000001,P00001,2,1000.00,0.10,2000.00,1800.00
